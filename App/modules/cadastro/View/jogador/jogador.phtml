@@ -1,0 +1,84 @@
+<div class="page-content clearfix sidebar-page">
+    <div class="page-content-wrapper">
+        <div class="page-content-inner">
+            <div id="page-header" class="clearfix">
+                <div class="page-header">
+                    <h2>Jogador</h2>
+                    <span class="txt"></span>
+                    <div id="teste">
+                        
+                    </div>
+                </div>
+            </div>
+           </br>
+           
+            <div class="row">
+                <!-- Start .row -->
+                <div class="col-lg-12 col-md-12">
+                    <!-- col-lg-6 start here -->
+                    <div class="panel panel-default plain toggle panelClose panelRefresh">
+                        <!-- Start .panel -->
+                        <div class="panel-body">
+                            
+                            <div class="form-group">
+                                <form class="form-horizontal group-border stripped">
+                                    <div class="form-group">
+                                        <div class="col-md-9 col-lg-9">
+                                            <a href="<?= caminho_raiz()?>cadastro/jogador/adicionar" class="btn btn-success mr5 mb10 pull-left"><i class="fa fa-plus-circle"></i> &nbsp;Adicionar</a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            
+                            <table id="editable-table" class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        
+                                        <th class="">Nome</th>
+                                        <th class="">Nivel</th>
+                                        <th class="">Goleiro</th>
+                                        <th class="">Editar</th>
+                                        <th class="">Excluir</th>
+                                        
+                                    </tr>
+                                </thead>
+                                <tbody id="lista">
+                                    <?php foreach($jogadores as $jogador):?>
+                                        <tr>
+                                            <td><?=$jogador->nome?></td>
+
+                                            <td>
+                                                <?php 
+                                                
+                                                for($i = 0; $i< $jogador->nivel;$i++ ){
+                                                    echo '<i class="glyphicon glyphicon-star"></i>';
+                                                }
+                                                ?>
+                                            </td>
+                                            <td><?=($jogador->goleiro)?"Sim":"Não" ?></td>
+
+                                            <td>
+                                                <a class="btn btn-warning  mr5 mb10" href="<?=caminho_raiz();?>cadastro/jogador/editar/<?= $jogador->id_jogador;?>">                                        
+                                                <i style="cursor:pointer" class="glyphicon glyphicon-edit"></i>
+                                                </a>
+                                            </td>
+
+                                            <td>
+                                            <button class="btn btn-danger mr5 mb10" onclick="excluir(this)" value="<?=$jogador->id_jogador;?>" >
+                                                <i class="glyphicon glyphicon-trash"></i>
+                                            </button>
+                                        </td>
+                                        </tr>
+                                    <?php endforeach;?>
+                                </tbody>
+                            </table>
+                            
+                        </div>
+                    </div>
+                    <!-- End .panel -->
+                </div>
+            <!-- col-lg-12 end here -->
+            </div>
+        </div>
+    </div>
+</div>    

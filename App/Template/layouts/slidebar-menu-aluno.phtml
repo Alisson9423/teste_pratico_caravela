@@ -1,0 +1,152 @@
+<div id="header" class="page-navbar">
+    <!-- .navbar-brand -->
+    <a href="<?= caminho_raiz();?>" class="navbar-brand hidden-xs hidden-sm">
+        <img src="<?php echo caminho_raiz();?>assets/img/logo.png" class="logo hidden-xs" alt="Dynamic logo">
+        <img src="<?php echo caminho_raiz();?>assets/img/logosm.png" class="logo-sm hidden-lg hidden-md" alt="Dynamic logo">
+    </a>
+    <!-- / navbar-brand -->
+    <!-- .no-collapse -->
+    <div id="navbar-no-collapse" class="navbar-no-collapse">
+        <!-- top left nav -->
+        <ul class="nav navbar-nav">
+            <li class="toggle-sidebar">
+                <a href="#">
+                    <i class="fa fa-reorder"></i>
+                    <span class="sr-only">Collapse sidebar</span>
+                </a>
+            </li>
+            <li>
+                <a href="<?= caminho_raiz();?>"  title="Home"><i class="glyphicon glyphicon-home"></i></a>
+            </li>
+        </ul>
+        <!-- / top left nav -->
+        <!-- top right nav -->
+        <ul class="nav navbar-nav navbar-right">
+            
+            <li class="dropdown">
+                <a href="#" data-toggle="dropdown">
+                    <i class="fa fa-cog"></i>
+                    <span class="sr-only">Configurações</span>
+                </a>
+                <ul class="dropdown-menu dropdown-form dynamic-settings right" role="menu">
+                    <li><a href="#" class="dropdown-menu-header">Opções</a>
+                    </li>
+                    <?php if(return_nivel() == 'CLI' && empty(retorna_dados_cookie_usuario_aluno('facebook_id'))):?>
+                                <li><a href="<?= caminho_raiz()?>home/home/senha"><i class="fa fa-key"></i>Alterar Senha</a>
+                                </li>
+                                <li><a href="<?= caminho_raiz()?>home/home/perfil"><i class="glyphicon glyphicon-user"></i>Alterar Foto</a>
+                                </li>
+                                
+                            <?php endif;?>
+                            
+
+                                <li>
+                                    <a href="<?= caminho_raiz()?>lista/lista"><i class="fa fa-list-alt"></i>Lista</a>                                   
+                                </li>
+                                <li><a href="javascript:;" onclick="Logout()"><i class="fa fa-power-off"></i>Logout</a>
+                                </li>
+
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:;" onclick="Logout()">
+                    <i class="fa fa-power-off"></i>
+                    <span class="sr-only">Logout</span>
+                </a>
+            </li>
+            
+        </ul>
+        <!-- / top right nav -->
+    </div>
+    <!-- / collapse -->
+</div>
+
+<div id="wrapper">
+    <!-- .page-sidebar -->
+    <aside id="sidebar" class="page-sidebar hidden-md hidden-sm hidden-xs">
+        <!-- Start .sidebar-inner -->
+        <div class="sidebar-inner">
+            <!-- Start .sidebar-scrollarea -->
+            <div class="sidebar-scrollarea">
+                <!--  .sidebar-panel -->
+                <div class="sidebar-panel">
+                    <h5 class="sidebar-panel-title">Perfil</h5>
+                </div>
+                <!-- / .sidebar-panel -->
+                <div class="user-info clearfix">
+                    
+
+                    
+                    <span class="name" id="nome_usuario"><?= retorna_dados_cookie_usuario_aluno('nome')?></span>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default btn-xs"><i class="l-basic-gear"></i>
+                        </button>
+                        <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">Config <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu right " role="menu">
+
+
+                             
+                        </ul>
+                    </div>
+                </div>
+                <!--  .sidebar-panel -->
+                <div class="sidebar-panel">
+                    <h5 class="sidebar-panel-title">Navegação asdsd</h5>
+                </div>
+                <!-- / .sidebar-panel -->
+                <!-- .side-nav -->
+                <div class="side-nav">
+                    <ul class="nav">
+                        <li>
+                            <a href="#"><i class="fa fa-folder-open-o"></i><span class="txt">Cadastro</span></a>
+                            <ul class="sub">
+                                
+
+                                <li><a href="<?= caminho_raiz();?>cadastro/agenda"><span class="txt">Agenda</span></a>
+                                </li>
+                                <li><a href="<?= caminho_raiz();?>cadastro/objetivo"><span class="txt">Objetivo</span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="txt">Avaliação</span></a>
+                                    <ul class="sub">
+                                        <li><a href="<?= caminho_raiz();?>avalicao/circunferencia"><span class="txt">Circunferencia</span></a>
+                                        </li>
+										<li><a href="<?= caminho_raiz();?>avalicao/imc"><span class="txt">IMC</span></a>
+                                        </li>
+                                        <li><a href="<?= caminho_raiz();?>avalicao/gordura"><span class="txt">Per. de Gordura</span></a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                
+
+                            </ul>
+                        </li>
+
+
+
+                    </ul>
+                </div>
+                <!-- / side-nav -->
+                <!--  .sidebar-panel -->
+
+                <div class="sidebar-panel">
+                    <h5 class="sidebar-panel-title">Status</h5>
+                    <div class="sidebar-panel-content">
+                        <div class="sidebar-stat mb10">
+                            <p class="color-white mb5 mt5"><i class="fa fa-list-alt"></i> Ultima Avaliação
+                            </p>
+                            
+
+                        </div>
+                        
+                    </div>
+                </div>
+
+                
+                
+            </div>
+            <!-- End .sidebar-scrollarea -->
+        </div>
+        <!-- End .sidebar-inner -->
+    </aside>   

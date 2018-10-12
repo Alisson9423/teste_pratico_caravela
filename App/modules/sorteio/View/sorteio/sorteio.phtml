@@ -1,0 +1,124 @@
+<div class="page-content clearfix sidebar-page">
+    <div class="page-content-wrapper">
+        <div class="page-content-inner">
+            <div id="page-header" class="clearfix">
+                <div class="page-header">
+                    <h2>Jogador</h2>
+                    <span class="txt"></span>
+                    <div id="teste">
+                        
+                    </div>
+                </div>
+            </div>
+           </br>
+           
+            <div class="row">
+                <!-- Start .row -->
+                <div class="col-lg-12 col-md-12">
+                    <!-- col-lg-6 start here -->
+                    <div class="panel panel-default plain toggle panelClose panelRefresh">
+                        <!-- Start .panel -->
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <form class="form-horizontal group-border stripped">
+                                    <div class="form-group">
+                                        <div class="col-md-9 col-lg-9">
+                                            <a href="#" onclick="sorteio.setQtd()" data-toggle="modal" data-target="#myModal2"" class="btn btn-success mr5 mb10 pull-left">
+                                                 Time
+                                            </a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">
+                                                <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+                                            </button>
+                                            <h4 class="modal-title" id="myModalLabel2">Time</h4>
+                                        </div>
+                                        <div id="modal" class="modal-body">
+                                            <h2>Qtd de Confirmação: <span id="qtd"></span></h2>
+                                            <form class="form-horizontal group-border stripped" id="time">
+                                                <div class="container-fluid pagina3" id="pagina3">
+                                                    <div class="row">
+                                                        <div class="col-md-10 col-md-offset-1" style="margin-bottom: 3vw;">
+                                                            <div class="text-center ">
+                                                                <label class="col-md-3  label_personalizado">Nº Jogador Por Time:</label>
+                                                                <div class="col-md-8">
+                                                                    <input type="text" required data-mask="numero" maxlength="1" required  name="nome"  class="form-control_alisson required">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="arraySort">
+
+                                                </div>
+                                                
+                                                <div class="modal-footer">
+                                                    <button type="submit"  class="btn btn-primary">&nbsp;Sortear</button>
+                                                    <a type="button" class="btn btn-default" data-dismiss="modal">Close</a>
+                                                </div>
+                                            </form>
+                                            
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <table id="editable-table" class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        
+                                        <th class="">Nome</th>
+                                        <th class="">Nivel</th>
+                                        <th class="">Goleiro</th>
+                                        <th class="">Confirmar/Presença</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="lista">
+                                    <?php foreach($jogadores as $jogador):?>
+                                        <tr>
+                                            <td><?=$jogador->nome?></td>
+
+                                            <td>
+                                            <input type="hidden" value="<?=$jogador->nivel;?>">
+                                                <?php 
+                                                
+                                                for($i = 0; $i< $jogador->nivel;$i++ ){
+                                                    echo '<i class="glyphicon glyphicon-star"></i>';
+                                                }
+                                                ?>
+                                            </td>
+                                            <td>
+                                            <input type="hidden" value="<?=$jogador->goleiro;?>">
+                                            <?=($jogador->goleiro)?"Sim":"Não" ?></td>
+
+                                            <td>
+                                                <div class="toggle-custom">
+                                                    <label class="toggle" data-on="Sim" data-off="Não">
+                                                        <input type="checkbox" id="checkbox-toggle" name="checkbox-toggle">
+                                                        <span class="button-checkbox"></span>
+                                                    </label>
+                                                </div>
+                                            </td>
+
+                                        </tr>
+                                    <?php endforeach;?>
+                                </tbody>
+                            </table>
+                            
+                        </div>
+                    </div>
+                    <!-- End .panel -->
+                </div>
+            <!-- col-lg-12 end here -->
+            </div>
+        </div>
+    </div>
+</div>    

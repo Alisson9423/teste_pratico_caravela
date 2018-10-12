@@ -1,0 +1,77 @@
+<div class="page-content clearfix sidebar-page">
+    <div class="page-content-wrapper">
+        <div class="page-content-inner">
+            <div id="page-header" class="clearfix">
+                <div class="page-header">
+                    <h2>Usuario</h2>
+                    <span class="txt"></span>
+                    <div id="teste">
+                        
+                    </div>
+                </div>
+            </div>
+           </br>
+            <div class="row">
+                <!-- Start .row -->
+                <div class="col-lg-12 col-md-12">
+                    <!-- col-lg-6 start here -->
+                    <div class="panel panel-default plain toggle panelClose panelRefresh">
+                        <!-- Start .panel -->
+                        <div class="panel-body">
+                            
+                            <div class="form-group">
+                                <form class="form-horizontal group-border stripped">
+                                    <div class="form-group">
+                                        <div class="col-md-9 col-lg-9">
+                                            <a href="<?= caminho_raiz()?>usuario/usuario/adicionar" class="btn btn-success mr5 mb10 pull-left"><i class="fa fa-plus-circle"></i> &nbsp;Adicionar</a>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 ">
+                                            <div class="input-group input-icon pull-right ">
+                                                <input type="text" class="form-control" onkeyup="exercicio.buscar(this)"  placeholder="Pesquisar">
+                                                <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            
+                            <table id="editable-table" class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th class="">Úsuario</th>
+                                        <th class="">Nome</th>
+                                        <th class="">Nivel</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="lista">
+                                    <?php foreach($listas as $list):?>
+                                        <tr>
+                                            <td id="regular-notice"><?=$list->usuario;?></td>
+                                            <td id="regular-notice"><?=$list->nome;?></td>
+                                            <td id="regular-notice"><?=(($list->nivel == 'FUNC')?"Funcionario":"Administrador")?></td>
+                                            <td>
+                                                <a href="<?= caminho_raiz();?>cadastro/aluno/ajuste/">                                        
+                                                <i style="cursor:pointer" class="fa fa-wrench"></i>
+                                                </a>
+                                            </td>
+                                                
+                                            <td>
+                                                <a href="javascript:;" data-t="" onclick="pessoa_fisica.remove(this)">                                        
+                                                <i style="cursor:pointer" class="glyphicon glyphicon-remove"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach;?>
+                                </tbody>
+                            </table>
+                            
+                        </div>
+                    </div>
+
+                    <!-- End .panel -->
+                </div>
+            <!-- col-lg-12 end here -->
+            </div>
+        </div>
+    </div>
+</div>    

@@ -1,0 +1,77 @@
+<div class="page-content clearfix sidebar-page">
+                <!-- .page-content-wrapper -->
+    <div class="page-content-wrapper">
+        <div class="page-content-inner">
+            <!-- Start .page-content-inner -->
+            <div id="page-header" class="clearfix">
+                <div class="page-header">
+                    <h2>Jogador</h2>
+                    <span class="txt"></span>
+                    <div id="teste">
+                        
+                    </div>
+                </div>
+                 
+            </div>
+            <!-- Start .row -->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title" id="lanacamento" >Editar</h4>
+                </div>
+                <div class="panel-body pt0 pb0">
+                    <form class="form-horizontal group-border stripped" action="<?=$jogador->id_jogador?>">
+                        <div class="container-fluid pagina3">
+                            <div class="row">
+                                <div class="col-md-7 col-md-offset-2">
+                                    <div class="text-center">
+                                        
+                                        <label class="col-md-3 label_personalizado">Jogador:</label>
+                                        <div class="col-md-8">
+                                            <input type="text" maxlength="60" value="<?=$jogador->nome?>" required  name="nome"  class="form-control_alisson required">
+                                        </div>
+                                        
+                                        <label class="col-md-3 label_personalizado">Nivel:</label>
+                                        <div class="col-md-8 space">
+                                            <select name="nivel" required class="form-control_alisson">
+                                                <option <?=($jogador->nivel == 1)?' selected="selected"':''?> value="1" >1</option>
+                                                <option <?=($jogador->nivel == 2)?' selected="selected"':''?> value="2" >2</option>
+                                                <option <?=($jogador->nivel == 3)?' selected="selected"':''?> value="3" >3</option>
+                                                <option <?=($jogador->nivel == 4)?' selected="selected"':''?> value="4" >4</option>
+                                                <option <?=($jogador->nivel == 5)?' selected="selected"':''?> value="5" >5</option>
+                                            </select>
+                                        </div>
+
+                                        <label class="col-md-3 label_personalizado">Goleiro:</label>
+                                        <div class="col-md-8 bottom">
+                                            <select name="goleiro" required class="form-control_alisson">
+                                                <option <?=($jogador->goleiro == 0)?' selected="selected"':''?> value="0" >Não</option>
+                                                <option <?=($jogador->goleiro == 1)?' selected="selected"':''?> value="1" >Sim</option>
+                                                
+                                            </select>
+                                        </div>
+
+                                        
+                                        
+                                        <div class="col-md-6 col-md-offset-4">
+                                            <button type="submit" class="btn btn-success mr5 mb10" ><i class="fa fa-save"></i> &nbsp;Salvar</button>
+                                            <a href="<?=caminho_raiz();?>cadastro/jogador" class="btn btn-success mr5 mb10"><i class="fa fa-reply"></i> &nbsp;Voltar</a>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </form>    
+                </div>
+            </div>    
+            <!-- End .row -->
+        </div>
+        <!-- End .page-content-inner -->
+    </div>
+                <!-- / page-content-wrapper -->
+</div>
+
+
+
+

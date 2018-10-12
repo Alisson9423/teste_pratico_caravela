@@ -1,0 +1,115 @@
+<div class="page-content clearfix sidebar-page">
+    <div class="page-content-wrapper">
+        <div class="page-content-inner">
+            <div id="page-header" class="clearfix">
+                <div class="page-header">
+                    <h2>Perfil</h2>
+                    <span class="txt">
+                        
+                    </span>
+                    
+                </div>
+            </div>
+            <?php $src = caminho_raiz().'/Upload/Usuario/'.retorna_cookie('id').'/'.retorna_cookie('img')?>
+            <div class="row invoice row-printable">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <!-- col-lg-12 start here -->
+                    <div class="panel panel-default plain">
+                        <!-- Start .panel -->
+                        <div class="panel-body">
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <!-- col-lg-4 start here -->
+                                <div class="panel panel-default plain">
+                                    <!-- Start .panel -->
+                                    
+                                    
+                                    <div class="modal fade" id="upload" tabindex="-1" role="dialog" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+
+                                                    <h4 class="modal-title" id="myModalLabel2">Atualizar</h4>
+                                                </div>
+                                                <div id="modal" class="modal-body">
+                                                    <img id="img_modal" data-toggle="modal" class="img-responsive " data-id="" src="<?=(empty(retorna_cookie('img'))?caminho_raiz()."assets/img/avatars/128.jpg":$src)?>" alt="Alterar Foto">
+                                                    <br>
+                                                    <div id="fileuploader">Upload</div>
+                                                </div>
+                                                <div  class="modal-footer">
+                                                    <a id="extrabutton" class="btn btn-primary">&nbsp;Enviar</a>
+                                                    <a id="remove" type="button" class="btn btn-default" data-dismiss="modal">Close</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="panel-body">
+                                        <div class="row profile">
+                                            <!-- Start .row -->
+                                            <div class="col-md-4">
+                                                <div id="img" class="img-responsive" >
+                                                    
+                                                    <img data-toggle="modal" class="img-responsive " onclick="usuario.render_upload_adm(this)" data-target="#upload" data-id="<?=retorna_cookie('id');?>" style="cursor:pointer" src="<?=(empty(retorna_cookie('img'))?caminho_raiz()."assets/img/avatars/128.jpg":$src)?>" alt="Alterar Foto">
+                                                    
+                                                </div>
+                                                </br>
+                                            </div>
+                                            <div class="col-md-8 ">
+                                                <div class="profile-name pull-right">
+                                                    <h3></h3>
+                                                    <p class="job-title mb0"><i class="fa fa-building"></i>Smart Shape</p>
+                                                   
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="contact-info bt">
+                                                    <div class="row">
+                                                        <!-- Start .row -->
+                                                       
+                                                        
+                                                    </div>
+                                                    <!-- End .row -->
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="profile-info bt">
+                                                    <h5 class="text-muted">Descrição da Empresa</h5>
+                                                    <p>Software Desenvolvido por Alisson Ferreira</p><br>
+                                                </div>
+                                                
+                                                <div class="social bt">
+                                                    <h5 class="text-muted">Social</h5>
+                                                    <dl class="dl-horizontal mb0">
+                                                        <dt>
+                                                            <span class="text-muted">
+                                                            <i class="fa fa-facebook-square"></i>
+                                                            <a target="_blanck" href="https://www.facebook.com/alisson.ferreira.7106">Facebook</a>
+                                                        </span>
+                                                        </dt>
+                                                        <dd>
+                                                        </dd>
+                                                        
+                                                    </dl>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- End .row -->
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <!-- col-lg-4 end here -->
+                            
+                        </div>
+                        </div>
+                    </div>
+                    <!-- End .panel -->
+                </div>
+                <!-- col-lg-12 end here -->
+            </div>
+            
+        </div>
+    </div>
+</div>    
