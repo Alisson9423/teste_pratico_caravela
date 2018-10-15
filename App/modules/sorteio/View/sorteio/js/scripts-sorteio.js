@@ -240,9 +240,9 @@ var sorteio = {
         var tmpNovaArray = [];
 
         // variavel de controle do while
-        var controle = true;
+        var controle = 10;
         
-        while(controle){
+        while(controle--){
 
             //Percorrendo os 2 primeiros array e balanciando o time
             for (let i = 0; i < parseInt(numeroJogador); i++) {
@@ -288,9 +288,7 @@ var sorteio = {
                     tmpNovaArray.push(arrayDeTime[1]);
     
                     arrayDeTime.splice(0,2);
-    
                     break;
-    
                 }else if(nivelPrimeiroArray -1 == nivelSegundoArray){
                     tmpNovaArray.push(arrayDeTime[0]);
                     tmpNovaArray.push(arrayDeTime[1]);
@@ -311,11 +309,9 @@ var sorteio = {
     
                     arrayDeTime.splice(0,2);
                     break;
-                }else if(i == 5){
-
-                    controle = false;
-                    break;
                 }
+
+                
     
             }
     
@@ -330,6 +326,9 @@ var sorteio = {
                 arrayDeTime.splice(0,1);
                 controle = false;
             }
+
+
+            
 
         }
 
