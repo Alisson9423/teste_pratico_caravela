@@ -251,7 +251,7 @@ var sorteio = {
                 let melhorJogador = arrayDeTime[0].splice(0,1);
     
                 //Capturando o Pior Jogador
-                let piorJogador = arrayDeTime[1].splice(parseInt(arrayDeTime.length -1), 1);
+                let piorJogador = arrayDeTime[1].splice(parseInt(arrayDeTime[1].length -1), 1);
     
                 //Colocando o melhor jogador no time mais fraco
                 arrayDeTime[0].push(piorJogador[0]);
@@ -310,6 +310,10 @@ var sorteio = {
                     tmpNovaArray.push(arrayDeTime[1]);
     
                     arrayDeTime.splice(0,2);
+                    break;
+                }else if(i == 5){
+
+                    controle = false;
                     break;
                 }
     
